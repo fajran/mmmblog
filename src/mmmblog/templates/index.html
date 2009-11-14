@@ -1,0 +1,30 @@
+
+
+{% if links %}
+<h1>Links</h1>
+<ul>
+{% for link in links %}
+<li><a href="{{ link.url }}">{{ link.title }}</a>
+    {% if link.extra %}
+    {% autoescape off %}
+    &ndash; {{ link.extra }}
+    {% endautoescape %}
+    {% endif %}
+</li>
+{% endfor %}
+</ul>
+{% endif %}
+
+<h1>Blogs</h1>
+
+{% for entry in entries %}
+<div class="content">
+<h2><a href="{% url views.blog entry.id %}">{{ entry.title }}</a></h2>
+{% autoescape off %}
+{{ entry.content }}
+{% endautoescape %}
+{{ entry.date|date:"r" }}
+</div>
+{% endfor %}
+
+
