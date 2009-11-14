@@ -1,5 +1,7 @@
 
 from django.db import models
+from django.db.models import signals
+from staticgenerator import quick_publish, quick_delete
 
 FORMAT_CHOICES = (
     ('html', 'Raw HTML'),
@@ -30,4 +32,18 @@ class Link(models.Model):
 
     def __unicode__(self):
         return self.title
+
+def publish_blog(sender, **kwargs):
+    instance = kwargs.get('instance')
+    quick_publish('/')
+    quick_publish('/blog/')
+    quick_publish('/blog/%i/' % instance.id)
+
+def unpublish_blog(sender, **kwargs):
+    instance = kwargs.get('instance')
+    quick_delete('/blog/%i/' % instance.id)
+    quick_publish('/')
+
+signals.post_save.connect(publish_blog, sender=Blog)
+signals.post_delete.connect(unpublish_blog, sender=Blog)
 
