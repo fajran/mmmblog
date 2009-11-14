@@ -17,4 +17,7 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
     (r'^admin/', include(admin.site.urls)),
+    (r'^blog/$', 'mmmblog.views.blog'),
+    (r'^blog/(?P<blog_id>\d+)/$', 'mmmblog.views.blog'),
+    (r'^$', 'mmmblog.views.index')
 )
