@@ -10,8 +10,8 @@ because the admin is already tired to ssh the server just only to add updates.
 mmmblog can be secretly placed somewhere and the resulted static pages can be
 rsync-ed to the server.
 
-This blog engine only have two kinds of content: Blog and Link. Blog has text
-content while Link is used to put a new URL with a short description.
+This blog engine only have two kinds of content: Blog and Link. Blog has a long
+text content while Link only have URL field with a short description.
 
 
 Installation
