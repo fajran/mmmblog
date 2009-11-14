@@ -1,0 +1,12 @@
+<h1>Blog</h1>
+
+{% for entry in entries %}
+<div class="content">
+<h2><a href="{% url views.blog entry.id %}">{{ entry.title }}</a></h2>
+{% autoescape off %}
+{{ entry.content }}
+{% endautoescape %}
+{{ entry.date|date:"r" }}
+</div>
+{% endfor %}
+

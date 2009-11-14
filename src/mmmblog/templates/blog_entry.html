@@ -1,0 +1,9 @@
+<h1>{{ entry.title }}</h1>
+
+<div class="content">
+{% autoescape off %}
+{{ entry.content }}
+{% endautoescape %}
+</div>
+
+<div class="info">{{ entry.date|date:"r" }}</div>
