@@ -17,6 +17,9 @@ class Blog(models.Model):
     def __unicode__(self):
         return self.title
 
+    def get_absolute_url(self):
+        return '/blog/%i/' % self.id
+
 class Link(models.Model):
     date = models.DateTimeField(auto_now_add=True)
     title = models.CharField(max_length=250)
