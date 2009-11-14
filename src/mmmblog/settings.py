@@ -70,5 +70,5 @@ INSTALLED_APPS = (
 )
 
 
-WEB_ROOT = '/Users/iang/project/kambing/blog/www'
+WEB_ROOT = 'www'
 
