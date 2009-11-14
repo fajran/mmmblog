@@ -9,6 +9,6 @@ setup(
     author = 'Fajran Iman Rusadi',
     packages = find_packages('src'),
     package_dir = {'': 'src'},
-    install_requires = ['setuptools', 'staticgenerator'],
+    install_requires = ['setuptools', 'staticgenerator', 'Markdown'],
 )
 
